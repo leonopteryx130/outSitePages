@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import { Routes } from "react-router-dom";
 
-import HomeSvg from '@/assets/icons/home.svg';
 import { initPageLayout } from '@/utils/lifeCircle';
-import style from './App.scss'
+import { isMobile } from "@/utils/commonUtils";
 
 function App() {
 
@@ -18,12 +18,19 @@ function App() {
     })
   }, []);
 
-  return (
-    <div className={style.App}>
-      <HomeSvg width="100px" height="100px" />
-      测试APP
-    </div>
-  );
+  if (isMobile()) {
+    return (
+      <Routes>
+
+      </Routes>
+    )
+  } else {
+    return (
+      <Routes>
+
+      </Routes>
+    )
+  }
 }
 
 export default App;

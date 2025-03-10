@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
-import { Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router"
 
 import { initPageLayout } from '@/utils/lifeCircle';
 import { isMobile } from "@/utils/commonUtils";
+import MobileBaseUrl from '@/MobilePages';
+import PCBaseUrl from '@/PCPages';
+import PureText from '@/MobilePages/QrCode/PureText';
 
 function App() {
 
@@ -20,15 +23,20 @@ function App() {
 
   if (isMobile()) {
     return (
-      <Routes>
-
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MobileBaseUrl />} />
+          <Route path="/qrCode/pureText" element={<PureText />} />
+        </Routes>
+      </BrowserRouter>
     )
   } else {
     return (
-      <Routes>
-
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PCBaseUrl />} />
+        </Routes>
+      </BrowserRouter>
     )
   }
 }

@@ -1,10 +1,11 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const PureText = () => {
 
-  const url = new URL(window.location.href);
-  const params = new URLSearchParams(url.search);
-  const text = params.get('text'); // "John"
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const text = queryParams.get('text'); // "John"
 
   return (
     <div style={{

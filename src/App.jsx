@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router"
+import { Routes, Route, HashRouter } from "react-router"
 
 import { initPageLayout } from '@/utils/lifeCircle';
 import { isMobile } from "@/utils/commonUtils";
@@ -23,20 +23,20 @@ function App() {
 
   if (isMobile()) {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<MobileBaseUrl />} />
           <Route path="/qrCode/pureText" element={<PureText />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     )
   } else {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<PCBaseUrl />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }

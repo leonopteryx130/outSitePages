@@ -6,6 +6,7 @@ import { isMobile } from "@/utils/commonUtils";
 import MobileBaseUrl from '@/MobilePages';
 import PCBaseUrl from '@/PCPages';
 import PureText from '@/MobilePages/QrCode/PureText';
+import PhoneNumber from '@/MobilePages/QrCode/PhoneNumber';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MobileBaseUrl />} />
           <Route path="/qrCode/pureText" element={<PureText />} />
+          <Route path="/qrCode/phoneNumber" element={<PhoneNumber />} />
         </Routes>
       </HashRouter>
     )
